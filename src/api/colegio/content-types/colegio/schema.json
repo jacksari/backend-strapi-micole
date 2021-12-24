@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "colegios",
+  "info": {
+    "singularName": "colegio",
+    "pluralName": "colegios",
+    "displayName": "Colegio",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "description": {
+      "type": "text"
+    },
+    "sedes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sede.sede",
+      "mappedBy": "colegio"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    }
+  }
+}

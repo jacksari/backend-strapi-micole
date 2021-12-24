@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sedes",
+  "info": {
+    "singularName": "sede",
+    "pluralName": "sedes",
+    "displayName": "Sede",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "colegio": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::colegio.colegio",
+      "inversedBy": "sedes"
+    },
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    }
+  }
+}
